@@ -7,8 +7,8 @@ mw.b ${ramdisk_addr_r} 0xff 0x2E000; fatload mmc 1 ${ramdisk_addr_r} idblock.img
 #uboot.img 0x400:0x80000 0x400:0x80000 0x200:0x40000
 mw.b ${ramdisk_addr_r} 0xff 0x40000; fatload mmc 1 ${ramdisk_addr_r} uboot.img; mtd erase spi-nand0 0x80000 0x80000; mtd write spi-nand0 ${ramdisk_addr_r} 0x80000 0x40000;
 
-#boot.img 0x800:0x100000 0x2000:0x400000 0x1809:0x301200
-mw.b ${ramdisk_addr_r} 0xff 0x301200; fatload mmc 1 ${ramdisk_addr_r} boot.img; mtd erase spi-nand0 0x100000 0x400000; mtd write spi-nand0 ${ramdisk_addr_r} 0x100000 0x301200;
+#boot.img 0x800:0x100000 0x2000:0x400000 0x1808:0x301000
+mw.b ${ramdisk_addr_r} 0xff 0x301000; fatload mmc 1 ${ramdisk_addr_r} boot.img; mtd erase spi-nand0 0x100000 0x400000; mtd write spi-nand0 ${ramdisk_addr_r} 0x100000 0x301000;
 
 #oem.img 0x2800:0x500000 0xF000:0x1E00000 0x6000:0xC00000
 mw.b ${ramdisk_addr_r} 0xff 0xC00000; fatload mmc 1 ${ramdisk_addr_r} oem.img; mtd erase spi-nand0 0x500000 0x1E00000; mtd write spi-nand0 ${ramdisk_addr_r} 0x500000 0xC00000;
